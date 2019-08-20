@@ -34,6 +34,6 @@ public class ImageRotatorTest {
     }
 
     private boolean compareImages(BufferedImage imgA, BufferedImage imgB) {
-        return imgA.getWidth() == imgB.getWidth() || imgA.getHeight() == imgB.getHeight();
+        return imgA.getWidth() == imgB.getWidth() && imgA.getHeight() == imgB.getHeight();
     }
 }
