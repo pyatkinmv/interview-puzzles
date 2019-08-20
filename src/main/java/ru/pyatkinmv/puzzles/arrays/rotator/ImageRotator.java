@@ -1,4 +1,4 @@
-package ru.pyatkinmv.puzzles.rotator;
+package ru.pyatkinmv.puzzles.arrays.rotator;
 
 
 import java.awt.*;

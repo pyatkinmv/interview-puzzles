@@ -1,7 +1,8 @@
+package ru.pyatkinmv.puzzles.arrays.rotator;
+
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
-import ru.pyatkinmv.puzzles.rotator.ImageRotator;
 
 import javax.imageio.ImageIO;
 import java.awt.image.BufferedImage;
