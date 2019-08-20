@@ -34,6 +34,7 @@ public class ImageRotatorTest {
         return ImageIO.read(fileImage);
     }
 
+    // TODO: fix image comparing
     private boolean compareImages(BufferedImage imgA, BufferedImage imgB) {
         return imgA.getWidth() == imgB.getWidth() && imgA.getHeight() == imgB.getHeight();
     }
