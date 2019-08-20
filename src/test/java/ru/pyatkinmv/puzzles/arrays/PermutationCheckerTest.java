@@ -7,7 +7,6 @@ import static org.junit.Assert.assertTrue;
 import static ru.pyatkinmv.puzzles.arrays.PermutationChecker.isPermutation;
 
 public class PermutationCheckerTest {
-
     @Test
     public void isPermutationTest() {
         assertTrue(isPermutation("aqwsderf", "frdeaqws"));
