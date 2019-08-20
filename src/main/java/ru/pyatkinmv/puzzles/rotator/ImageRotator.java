@@ -1,4 +1,4 @@
-package ru.pyatkinmv.interviewPuzzles.ImageRotator;
+package ru.pyatkinmv.puzzles.rotator;
 
 import java.awt.*;
 import java.awt.image.BufferedImage;
