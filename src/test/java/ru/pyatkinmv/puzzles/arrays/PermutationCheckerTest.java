@@ -19,7 +19,7 @@ public class PermutationCheckerTest {
 
     @Test
     public void isPalindromPermutationTest() {
-        assertTrue(isPalindromPermutation("tact coa"));
+        assertTrue(isPalindromPermutation("Tact Coa"));
         assertTrue(isPalindromPermutation("tact coao"));
         assertTrue(isPalindromPermutation("taco cat"));
         assertTrue(isPalindromPermutation("atco cta"));

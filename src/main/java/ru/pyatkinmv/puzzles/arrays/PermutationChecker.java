@@ -17,7 +17,7 @@ public class PermutationChecker {
     }
 
     public static boolean isPalindromPermutation(String s) {
-        String sortedCompressed = sort(s.replaceAll(" ", ""));
+        String sortedCompressed = sort(s.replaceAll(" ", "").toLowerCase());
         int length = sortedCompressed.length();
         if (length <= 2) {
             return true;
