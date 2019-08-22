@@ -1,4 +1,4 @@
-package ru.pyatkinmv.puzzles.lists;
+package ru.pyatkinmv.puzzles.lists.impl;
 
 public class SinglyLinkedList<E> implements LinkedList<E> {
     private Entry<E> first;
@@ -30,13 +30,22 @@ public class SinglyLinkedList<E> implements LinkedList<E> {
         return item;
     }
 
-    // TODO; fix it (what if same as getLast() item is in middle of the list?)
     @Override
     public E removeLast() {
         validateSize();
-        E last = getLast();
-        remove(last);
-        return last;
+        Entry<E> entry = first;
+        if (size == 1) {
+            first = null;
+            --size;
+            return entry.item;
+        }
+        while (entry.next.next != null) {
+            entry = entry.next;
+        }
+        E item = entry.next.item;
+        entry.next = null;
+        --size;
+        return item;
     }
 
     @Override

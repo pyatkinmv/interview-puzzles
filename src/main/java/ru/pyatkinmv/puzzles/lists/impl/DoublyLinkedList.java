@@ -1,4 +1,4 @@
-package ru.pyatkinmv.puzzles.lists;
+package ru.pyatkinmv.puzzles.lists.impl;
 
 public class DoublyLinkedList<E> implements LinkedList<E> {
     private Entry<E> first;

@@ -1,4 +1,4 @@
-package ru.pyatkinmv.puzzles.lists;
+package ru.pyatkinmv.puzzles.lists.impl;
 
 import static org.junit.Assert.*;
 

@@ -1,11 +1,11 @@
-package ru.pyatkinmv.puzzles.lists;
+package ru.pyatkinmv.puzzles.lists.impl;
 
 import org.junit.Test;
 
-public class DoublyLinkedListTest extends LinkedListTest<DoublyLinkedList<String>> {
+public class SinglyLinkedListTest extends LinkedListTest<SinglyLinkedList<String>> {
     @Override
-    DoublyLinkedList<String> buildEmptyList() {
-        return new DoublyLinkedList<>();
+    SinglyLinkedList<String> buildEmptyList() {
+        return new SinglyLinkedList<>();
     }
 
     @Test
