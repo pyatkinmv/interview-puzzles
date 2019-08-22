@@ -4,14 +4,12 @@ package ru.pyatkinmv.puzzles.arrays.rotator;
 import java.awt.*;
 import java.awt.image.BufferedImage;
 
-import static java.awt.image.BufferedImage.TYPE_3BYTE_BGR;
-
 public class ImageRotator implements Rotator<BufferedImage> {
     public BufferedImage rotate(BufferedImage image, boolean clockwise) {
         int[][] arrImage = intArrayFromImage(image);
         int[][] rotatedArray;
         rotatedArray = new MatrixRotator().rotate(arrImage, clockwise);
-        return imageFromIntArray(rotatedArray);
+        return imageFromIntArray(rotatedArray, image.getType());
     }
 
     private int[][] intArrayFromImage(BufferedImage bufferedImage) {
@@ -27,8 +25,8 @@ public class ImageRotator implements Rotator<BufferedImage> {
         return arrImage;
     }
 
-    private BufferedImage imageFromIntArray(int[][] matrix) {
-        BufferedImage image = new BufferedImage(matrix.length, matrix[0].length, TYPE_3BYTE_BGR);
+    private BufferedImage imageFromIntArray(int[][] matrix, int imageType) {
+        BufferedImage image = new BufferedImage(matrix.length, matrix[0].length, imageType);
         for (int i = 0; i < matrix.length; i++) {
             for (int j = 0; j < matrix[0].length; j++) {
                 int intColor = matrix[i][j];
