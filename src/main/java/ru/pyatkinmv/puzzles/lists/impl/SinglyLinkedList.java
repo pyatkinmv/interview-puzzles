@@ -53,7 +53,7 @@ public class SinglyLinkedList<E> implements LinkedList<E> {
         if (isEmpty()) {
             return false;
         }
-        if (first.item.equals(item)) {
+        if (item.equals(first.item)) {
             first = first.next;
             --size;
             return true;
