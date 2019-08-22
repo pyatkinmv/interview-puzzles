@@ -1,12 +1,15 @@
 package ru.pyatkinmv.puzzles.lists.impl;
 
+import org.junit.Test;
+
 import static org.junit.Assert.*;
 
-public abstract class LinkedListTest<L extends LinkedList<String>> {
-    abstract L buildEmptyList();
+public abstract class LinkedListTest<E extends LinkedList<String>> {
+    abstract E buildEmptyList();
 
+    @Test
     public void removeTest() {
-        L list = buildEmptyList();
+        E list = buildEmptyList();
         list.addLast("one");
         list.addLast("two");
         list.addLast("three");
@@ -23,15 +26,17 @@ public abstract class LinkedListTest<L extends LinkedList<String>> {
         assertTrue(list.isEmpty());
     }
 
+    @Test
     public void isEmptyTest() {
-        L list = buildEmptyList();
+        E list = buildEmptyList();
         assertTrue(list.isEmpty());
         list.addFirst("first");
         assertFalse(list.isEmpty());
     }
 
+    @Test
     public void getSizeTest() {
-        L list = buildEmptyList();
+        E list = buildEmptyList();
         assertEquals(0, list.getSize());
         list.addLast("one");
         list.addLast("two");
@@ -46,24 +51,27 @@ public abstract class LinkedListTest<L extends LinkedList<String>> {
         assertEquals(4, list.getSize());
     }
 
+    @Test
     public void addFirstTest() {
-        L list = buildEmptyList();
+        E list = buildEmptyList();
         list.addFirst("first");
         assertEquals("first", list.getFirst());
         list.addFirst("new first");
         assertEquals("new first", list.getFirst());
     }
 
+    @Test
     public void addLastTest() {
-        L list = buildEmptyList();
+        E list = buildEmptyList();
         list.addLast("last");
         assertEquals("last", list.getLast());
         list.addLast("new last");
         assertEquals("new last", list.getLast());
     }
 
+    @Test
     public void removeFirstTest() {
-        L list = buildEmptyList();
+        E list = buildEmptyList();
         list.addFirst("one");
         assertEquals("one", list.removeFirst());
         assertTrue(list.isEmpty());
@@ -73,8 +81,9 @@ public abstract class LinkedListTest<L extends LinkedList<String>> {
         assertEquals(1, list.getSize());
     }
 
+    @Test
     public void removeLastTest() {
-        L list = buildEmptyList();
+        E list = buildEmptyList();
         list.addLast("one");
         assertEquals("one", list.removeLast());
         assertTrue(list.isEmpty());
