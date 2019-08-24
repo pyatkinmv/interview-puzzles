@@ -27,12 +27,4 @@ public class UtilsTest {
         DummyLinkedList<Object> list = new DummyLinkedList<>();
         assertArrayEquals(new Object[0], toArray(list));
     }
-
-    @Test
-    public void addAllTest() {
-        DummyLinkedList<String> strings = new DummyLinkedList<>();
-        addAll(strings, asList("one", "two", "three"));
-        assertArrayEquals(new String[]{"one", "two", "three"}, toArray(strings));
-        assertArrayEquals(new String[0], toArray(new DummyLinkedList<>()));
-    }
 }
