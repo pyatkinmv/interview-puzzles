@@ -5,6 +5,32 @@ import java.util.Objects;
 public class DummyLinkedList<E> {
     public Entry<E> first;
 
+    public DummyLinkedList() {
+    }
+
+    @SafeVarargs
+    public DummyLinkedList(E... items) {
+        addAll(items);
+    }
+
+    public E getFirst() {
+        return first.item;
+    }
+
+    @SafeVarargs
+    public final void addAll(E... items) {
+        Entry<E> entry = first;
+        for (E item : items) {
+            if (isEmpty()) {
+                first = new Entry<>(item);
+                entry = first;
+                continue;
+            }
+            entry.next = new Entry<>(item);
+            entry = entry.next;
+        }
+    }
+
     public void addLast(E item) {
         Entry<E> last = new Entry<>(item);
         if (isEmpty()) {
@@ -12,10 +38,6 @@ public class DummyLinkedList<E> {
         } else {
             getLastEntry().next = last;
         }
-    }
-
-    public E getFirst() {
-        return first.item;
     }
 
     private Entry<E> getLastEntry() {
