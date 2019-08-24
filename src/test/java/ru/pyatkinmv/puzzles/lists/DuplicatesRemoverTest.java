@@ -3,11 +3,10 @@ package ru.pyatkinmv.puzzles.lists;
 import org.junit.Test;
 import ru.pyatkinmv.puzzles.lists.DummyLinkedList.Entry;
 
-import java.util.Collection;
-
 import static java.util.Arrays.asList;
 import static org.junit.Assert.assertArrayEquals;
 import static ru.pyatkinmv.puzzles.lists.DuplicatesRemover.removeDuplicates;
+import static ru.pyatkinmv.puzzles.lists.Utils.addAll;
 
 public class DuplicatesRemoverTest {
     @Test
@@ -29,11 +28,5 @@ public class DuplicatesRemoverTest {
         }
 
         assertArrayEquals(expected, actual);
-    }
-
-    private <E> void addAll(DummyLinkedList<E> list, Collection<E> c) {
-        for (E item : c) {
-            list.addLast(item);
-        }
     }
 }

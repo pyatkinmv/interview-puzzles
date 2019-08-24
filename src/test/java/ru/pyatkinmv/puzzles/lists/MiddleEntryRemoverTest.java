@@ -1,13 +1,10 @@
 package ru.pyatkinmv.puzzles.lists;
 
 import org.junit.Test;
-import ru.pyatkinmv.puzzles.lists.DummyLinkedList.Entry;
-
-import java.util.ArrayList;
-import java.util.List;
 
 import static org.junit.Assert.assertArrayEquals;
 import static ru.pyatkinmv.puzzles.lists.MiddleEntryRemover.remove;
+import static ru.pyatkinmv.puzzles.lists.Utils.toArray;
 
 public class MiddleEntryRemoverTest {
     @Test
@@ -31,14 +28,5 @@ public class MiddleEntryRemoverTest {
         DummyLinkedList<String> list = new DummyLinkedList<>();
         list.addLast("one");
         remove(list.first);
-    }
-
-    @SuppressWarnings("unchecked")
-    private <E> E[] toArray(DummyLinkedList<E> list) {
-        List<E> arrayList = new ArrayList<>();
-        for (Entry<E> entry = list.first; entry != null; entry = entry.next) {
-            arrayList.add(entry.item);
-        }
-        return (E[]) arrayList.toArray();
     }
 }
