@@ -12,6 +12,10 @@ public class DummyLinkedList<E> {
         }
     }
 
+    public E getFirst() {
+        return first.item;
+    }
+
     private Entry<E> getLastEntry() {
         Entry<E> last = first;
         while (last.next != null) {
