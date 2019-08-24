@@ -14,7 +14,7 @@ public class KthToLastElementGetter<E> {
         int n = size - k + 1;
 
         int i = 0;
-        for (Entry<E> entry = list.getFirst(); entry != null; entry = entry.next) {
+        for (Entry<E> entry = list.first; entry != null; entry = entry.next) {
             ++i;
             if (i == n) {
                 return entry.item;
@@ -26,7 +26,7 @@ public class KthToLastElementGetter<E> {
 
     private int getSize(DummyLinkedList list) {
         int size = 0;
-        for (Entry entry = list.getFirst(); entry != null; entry = entry.next) {
+        for (Entry entry = list.first; entry != null; entry = entry.next) {
             ++size;
         }
         return size;
@@ -34,7 +34,7 @@ public class KthToLastElementGetter<E> {
 
     public E getIterative(int k, DummyLinkedList<E> list) {
         validateIndex(k);
-        Entry<E> e2 = list.getFirst();
+        Entry<E> e2 = list.first;
         int i2 = 0;
         while (i2 != k) {
             if (e2 == null) {
@@ -43,7 +43,7 @@ public class KthToLastElementGetter<E> {
             ++i2;
             e2 = e2.next;
         }
-        Entry<E> e1 = list.getFirst();
+        Entry<E> e1 = list.first;
         while (e2 != null) {
             e1 = e1.next;
             e2 = e2.next;
@@ -54,7 +54,7 @@ public class KthToLastElementGetter<E> {
 
     public E getRecursive(int k, DummyLinkedList<E> list) {
         validateIndex(k);
-        Entry<E> entry = getRecursive(k, new MutableInt(0), list.getFirst());
+        Entry<E> entry = getRecursive(k, new MutableInt(0), list.first);
         if (entry == null) {
             throw new IllegalArgumentException(INDEX_EXCEED_LIST_SIZE);
         }

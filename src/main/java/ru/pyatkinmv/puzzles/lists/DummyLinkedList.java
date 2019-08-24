@@ -1,7 +1,7 @@
 package ru.pyatkinmv.puzzles.lists;
 
 public class DummyLinkedList<E> {
-    private Entry<E> first;
+    public Entry<E> first;
 
     public void addLast(E item) {
         Entry<E> last = new Entry<>(item);
@@ -44,10 +44,6 @@ public class DummyLinkedList<E> {
 
     public boolean isEmpty() {
         return first == null;
-    }
-
-    public Entry<E> getFirst() {
-        return first;
     }
 
     public static class Entry<E> {

@@ -24,7 +24,7 @@ public class DuplicatesRemoverTest {
 
         int[] actual = new int[10];
         int i = 0;
-        for (Entry<Integer> entry = list.getFirst(); entry != null; entry = entry.next) {
+        for (Entry<Integer> entry = list.first; entry != null; entry = entry.next) {
             actual[i++] = entry.item;
         }
 

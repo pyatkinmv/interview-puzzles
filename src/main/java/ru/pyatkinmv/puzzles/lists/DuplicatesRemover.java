@@ -8,7 +8,7 @@ public class DuplicatesRemover {
             return;
         }
 
-        Entry<E> current = list.getFirst();
+        Entry<E> current = list.first;
         Entry<E> inner;
         while (current != null) {
             inner = current;
