@@ -1,5 +1,7 @@
 package ru.pyatkinmv.puzzles.lists;
 
+import java.util.Objects;
+
 public class DummyLinkedList<E> {
     public Entry<E> first;
 
@@ -48,6 +50,41 @@ public class DummyLinkedList<E> {
 
     public boolean isEmpty() {
         return first == null;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (o == null) {
+            return false;
+        }
+        if (this.getClass() != o.getClass()) {
+            return false;
+        }
+
+        DummyLinkedList<?> list = (DummyLinkedList<?>) o;
+        Entry<E> entry1 = this.first;
+        Entry<?> entry2 = list.first;
+        while (entry1 != null && entry2 != null) {
+            if (!Objects.equals(entry1.item, entry2.item)) {
+                return false;
+            }
+            entry1 = entry1.next;
+            entry2 = entry2.next;
+        }
+
+        return checkSizeEquals(entry1, entry2);
+    }
+
+    private boolean checkSizeEquals(Entry<E> entry1, Entry<?> entry2) {
+        return entry1 == null && entry2 == null;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hashCode(this);
     }
 
     public static class Entry<E> {

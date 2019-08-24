@@ -3,7 +3,9 @@ package ru.pyatkinmv.puzzles.lists;
 import org.junit.Before;
 import org.junit.Test;
 
+import static java.util.Arrays.asList;
 import static org.junit.Assert.assertEquals;
+import static ru.pyatkinmv.puzzles.lists.Utils.addAll;
 
 public class KthToLastElementGetterTest {
     private KthToLastElementGetter<String> getter;
@@ -16,11 +18,7 @@ public class KthToLastElementGetterTest {
         getter = new KthToLastElementGetter<>();
 
         list = new DummyLinkedList<>();
-        list.addLast("one");
-        list.addLast("two");
-        list.addLast("three");
-        list.addLast("four");
-        list.addLast("five");
+        addAll(list, asList("one", "two", "three", "four", "five"));
 
         emptyList = new DummyLinkedList<>();
 
