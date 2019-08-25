@@ -38,4 +38,16 @@ public final class Utils {
         resultList.first = first;
         return resultList;
     }
+
+    public static <E> Entry<E> nullOrNext(Entry<E> entry) {
+        return entry == null ? null : entry.next;
+    }
+
+    public static <E> int getSize(DummyLinkedList<E> list) {
+        int size = 0;
+        for (Entry<E> entry = list.first; entry != null; entry = entry.next) {
+            ++size;
+        }
+        return size;
+    }
 }

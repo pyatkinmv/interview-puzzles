@@ -3,6 +3,7 @@ package ru.pyatkinmv.puzzles.lists;
 import ru.pyatkinmv.puzzles.lists.DummyLinkedList.Entry;
 
 import static java.lang.Math.pow;
+import static ru.pyatkinmv.puzzles.lists.Utils.nullOrNext;
 
 public class Number {
     private final DummyLinkedList<Integer> list;
@@ -42,10 +43,6 @@ public class Number {
             result.next = sum(nullOrNext(entry1), nullOrNext(entry2), value / 10);
         }
         return result;
-    }
-
-    private static Entry<Integer> nullOrNext(Entry<Integer> entry) {
-        return entry == null ? null : entry.next;
     }
 
     private Entry<Integer> buildList(int number) {
