@@ -3,7 +3,7 @@ package ru.pyatkinmv.puzzles.lists;
 import java.util.Objects;
 
 public class DummyLinkedList<E> {
-    public Entry<E> first;
+    Entry<E> first;
 
     public DummyLinkedList() {
     }
@@ -40,7 +40,7 @@ public class DummyLinkedList<E> {
         }
     }
 
-    private Entry<E> getLastEntry() {
+    Entry<E> getLastEntry() {
         Entry<E> last = first;
         while (last.next != null) {
             last = last.next;
