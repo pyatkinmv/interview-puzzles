@@ -48,4 +48,12 @@ public class IntersectorTest {
         firstEqual = new Intersector<Integer>(new DummyLinkedList<>(), new DummyLinkedList<>()).intersect();
         assertFalse(firstEqual.isPresent());
     }
+
+    @Test
+    public void intersectSameContentTest() {
+        DummyLinkedList<Integer> list1 = new DummyLinkedList<>(1, 2, 3, 4, 5);
+        DummyLinkedList<Integer> list2 = new DummyLinkedList<>(1, 2, 3, 4, 5);
+        Optional<Entry<Integer>> firstEqual = new Intersector<>(list1, list2).intersect();
+        assertFalse(firstEqual.isPresent());
+    }
 }

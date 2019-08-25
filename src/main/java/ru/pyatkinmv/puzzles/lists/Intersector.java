@@ -5,6 +5,7 @@ import ru.pyatkinmv.puzzles.lists.DummyLinkedList.Entry;
 import java.util.Optional;
 
 import static java.lang.Math.abs;
+import static java.util.Optional.ofNullable;
 import static ru.pyatkinmv.puzzles.lists.Utils.getSize;
 
 public class Intersector<E> {
@@ -26,7 +27,7 @@ public class Intersector<E> {
         } else if (size2 > size1) {
             entry2 = shift(entry2, abs(size1 - size2));
         }
-        return Optional.of(intersect(entry1, entry2));
+        return ofNullable(intersect(entry1, entry2));
     }
 
     private Entry<E> shift(Entry<E> entry, int diff) {
